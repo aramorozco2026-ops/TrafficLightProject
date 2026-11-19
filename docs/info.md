@@ -1,20 +1,15 @@
-<!---
-
-This file is used to generate your project datasheet. Please fill in the information below and delete any unused
-sections.
-
-You can also include images in this folder and reference them in the markdown. Each image must be less than
-512 kb in size, and the combined size of all images must be less than 1 MB.
--->
-
 ## How it works
 
-Explain how your project works
+Este proyecto implementa un controlador de semáforo sincronizado para dos vías (Autopista y Camino Rural) utilizando una máquina de estados finitos (FSM) de 4 estados en Verilog.
+
+Cuenta con un divisor de frecuencia configurado para un reloj de 50 MHz que genera un pulso cada segundo, alternando el paso automáticamente con ciclos de 10 segundos en verde y 3 segundos en amarillo para cada vía.
 
 ## How to test
 
-Explain how to use your project
+1. Aplica un pulso de reset poniendo `rst_n` en bajo (`0`) y después en alto (`1`).
+2. Verifica que las salidas inicien en Autopista Verde (`uo[0] = 1`) y Camino Rural Rojo (`uo[5] = 1`).
+3. Mantén el reloj corriendo a 50 MHz para observar la transición automática entre los 4 estados del semáforo.
 
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+6 LEDs con sus respectivas resistencias limitadoras conectados a los pines de salida dedicados `uo[0]` a `uo[5]`.
